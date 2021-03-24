@@ -92,6 +92,8 @@ install_XrayR() {
         rm /usr/local/XrayR/ -rf
     fi
 
+    mkdir /usr/local/XrayR/ -p
+
     if  [ $# == 0 ] ;then
         last_version=$(curl -Ls "https://api.github.com/repos/XrayR-project/XrayR/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
         if [[ ! -n "$last_version" ]]; then
