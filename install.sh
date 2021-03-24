@@ -116,8 +116,8 @@ install_XrayR() {
     unzip XrayR-linux-64.zip
     rm XrayR-linux-64.zip -f
     #cd XrayR
-    #chmod +x XrayR
-    #mkdir /etc/XrayR/ -p
+    chmod +x XrayR
+    mkdir /etc/XrayR/ -p
     rm /etc/systemd/system/XrayR.service -f
 	file="https://github.com/Meteor2017/XrayR-release/raw/master/XrayR.service"
 	wget -N --no-check-certificate -O /etc/systemd/system/XrayR.service ${file}

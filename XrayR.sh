@@ -121,6 +121,7 @@ update() {
 
 config() {
     cat /etc/XrayR/config.yml
+}
 
 uninstall() {
     confirm "确定要卸载 XrayR 吗?" "n"
