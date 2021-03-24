@@ -84,7 +84,7 @@ before_show_menu() {
 }
 
 install() {
-    bash <(curl -Ls https://raw.githubusercontent.com/Meteor2017/XrayR-release/master/XrayR.sh)
+    bash <(curl -Ls https://raw.githubusercontent.com/Meteor2017/XrayR-release/master/install.sh)
     if [[ $? == 0 ]]; then
         if [[ $# == 0 ]]; then
             start
@@ -386,8 +386,8 @@ show_menu() {
  ${green}10.${plain} 取消 XrayR 开机自启
 ————————————————
  ${green}11.${plain} 一键安装 bbr (最新内核)
- ${green}12.${plain} 查看 XrayR 版本
  "
+ #${green}12.${plain} 查看 XrayR 版本 后续更新可加入上方字符串中
     show_status
     echo && read -p "请输入选择 [0-12]: " num
 

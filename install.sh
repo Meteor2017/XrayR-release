@@ -87,12 +87,12 @@ install_acme() {
 }
 
 install_XrayR() {
-    cd /usr/local/
     if [[ -e /usr/local/XrayR/ ]]; then
         rm /usr/local/XrayR/ -rf
     fi
 
     mkdir /usr/local/XrayR/ -p
+	cd /usr/local/XrayR/
 
     if  [ $# == 0 ] ;then
         last_version=$(curl -Ls "https://api.github.com/repos/XrayR-project/XrayR/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
@@ -117,13 +117,13 @@ install_XrayR() {
         fi
     fi
 
-    unzip XrayR-linux-64.zip
+    unzip -O XrayR-linux-64.zip
     rm XrayR-linux-64.zip -f
     #cd XrayR
     chmod +x XrayR
     mkdir /etc/XrayR/ -p
     rm /etc/systemd/system/XrayR.service -f
-	file="https://raw.githubusercontent.com/Meteor2017/XrayR-release/raw/master/XrayR.service"
+	file="https://github.com/Meteor2017/XrayR-release/raw/master/XrayR.service"
 	wget -N --no-check-certificate -O /etc/systemd/system/XrayR.service ${file}
     #cp -f XrayR.service /etc/systemd/system/
     systemctl daemon-reload
