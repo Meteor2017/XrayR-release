@@ -1,5 +1,7 @@
 #!/bin/bash
 
+rm -rf $0
+
 red='\033[0;31m'
 green='\033[0;32m'
 yellow='\033[0;33m'
@@ -97,7 +99,7 @@ install_XrayR() {
             exit 1
         fi
         echo -e "检测到 XrayR 最新版本：${last_version}，开始安装"
-        wget -N --no-check-certificate -O /usr/local/XrayR-linux-64.zip https://raw.githubusercontent.com/XrayR-project/XrayR/releases/download/${last_version}/XrayR-linux-64.zip
+        wget -N --no-check-certificate -O /usr/local/XrayR/XrayR-linux-64.zip https://raw.githubusercontent.com/XrayR-project/XrayR/releases/download/${last_version}/XrayR-linux-64.zip
         if [[ $? -ne 0 ]]; then
             echo -e "${red}下载 XrayR 失败，请确保你的服务器能够下载 Github 的文件${plain}"
             exit 1
@@ -106,7 +108,7 @@ install_XrayR() {
         last_version=$1
         url="https://github.com/XrayR-project/XrayR/releases/download/${last_version}/XrayR-linux-64.zip"
         echo -e "开始安装 XrayR v$1"
-        wget -N --no-check-certificate -O /usr/local/XrayR-linux-64.zip ${url}
+        wget -N --no-check-certificate -O /usr/local/XrayR/XrayR-linux-64.zip ${url}
         if [[ $? -ne 0 ]]; then
             echo -e "${red}下载 XrayR v$1 失败，请确保此版本存在${plain}"
             exit 1
