@@ -117,7 +117,7 @@ install_XrayR() {
         fi
     fi
 
-    unzip -O XrayR-linux-64.zip
+    unzip XrayR-linux-64.zip
     rm XrayR-linux-64.zip -f
     #cd XrayR
     chmod +x XrayR
