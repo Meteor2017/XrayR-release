@@ -123,7 +123,7 @@ install_XrayR() {
     chmod +x XrayR
     mkdir /etc/XrayR/ -p
     rm /etc/systemd/system/XrayR.service -f
-	file="https://github.com/Meteor2017/XrayR-release/raw/master/XrayR.service"
+	file="https://github.com/XrayR-project/XrayR-release/raw/master/XrayR.service"
 	wget -N --no-check-certificate -O /etc/systemd/system/XrayR.service ${file}
     #cp -f XrayR.service /etc/systemd/system/
     systemctl daemon-reload
@@ -152,7 +152,7 @@ install_XrayR() {
     #if [[ ! -f /etc/XrayR/dns.yml ]]; then
     #    cp dns.yml /etc/XrayR/
     #fi
-    curl -o /usr/bin/XrayR -Ls https://raw.githubusercontent.com/Meteor2017/XrayR-release/master/XrayR.sh
+    curl -o /usr/bin/XrayR -Ls https://raw.githubusercontent.com/XrayR-project/XrayR-release/master/XrayR.sh
     chmod +x /usr/bin/XrayR
     #curl -o /usr/bin/XrayR-tool -Ls https://raw.githubusercontent.com/XrayR-project/XrayR/master/XrayR-tool
     #chmod +x /usr/bin/XrayR-tool
