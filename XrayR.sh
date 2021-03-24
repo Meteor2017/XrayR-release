@@ -84,7 +84,7 @@ before_show_menu() {
 }
 
 install() {
-    bash <(curl -Ls https://raw.githubusercontent.com/Meteor2017/XrayR-release/master/install.sh)
+    bash <(curl -Ls https://raw.githubusercontent.com/XrayR-project/XrayR-release/master/install.sh)
     if [[ $? == 0 ]]; then
         if [[ $# == 0 ]]; then
             start
@@ -108,7 +108,7 @@ update() {
 #        fi
 #        return 0
 #    fi
-    bash <(curl -Ls https://raw.githubusercontent.com/Meteor2017/XrayR-release/master/XrayR.sh) $version
+    bash <(curl -Ls https://raw.githubusercontent.com/XrayR-project/XrayR-release/master/XrayR.sh) $version
     if [[ $? == 0 ]]; then
         echo -e "${green}更新完成，已自动重启 XrayR，请使用 XrayR log 查看运行日志${plain}"
         exit
@@ -252,7 +252,7 @@ install_bbr() {
 }
 
 update_shell() {
-    wget -O /usr/bin/XrayR -N --no-check-certificate https://raw.githubusercontent.com/Meteor2017/XrayR-release/master/XrayR.sh
+    wget -O /usr/bin/XrayR -N --no-check-certificate https://raw.githubusercontent.com/XrayR-project/XrayR-release/master/XrayR.sh
     if [[ $? != 0 ]]; then
         echo ""
         echo -e "${red}下载脚本失败，请检查本机能否连接 Github${plain}"
@@ -340,7 +340,7 @@ show_enable_status() {
 
 show_XrayR_version() {
     echo -n "XrayR 版本："
-    /usr/local/XrayR/XrayR -v
+    /usr/local/XrayR/XrayR -version
     echo ""
     if [[ $# == 0 ]]; then
         before_show_menu
@@ -362,7 +362,7 @@ show_usage() {
     echo "XrayR update x.x.x - 更新 XrayR 指定版本"
     echo "XrayR install      - 安装 XrayR"
     echo "XrayR uninstall    - 卸载 XrayR"
-#   echo "XrayR version      - 查看 XrayR 版本"
+    echo "XrayR version      - 查看 XrayR 版本"
     echo "------------------------------------------"
 }
 
