@@ -9,6 +9,11 @@ Find the source code here: [XrayR-project/XrayR](https://github.com/XrayR-projec
 
 [教程](https://github.com/XrayR-project/XrayR/blob/master/README.md)
 
+# 一键安装
+
+```
+bash <(curl -Ls https://raw.githubusercontent.com/XrayR-project/XrayR-release/master/install.sh)
+```
 # Docker 安装
 
 ```
